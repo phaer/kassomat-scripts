@@ -14,7 +14,7 @@ chmod +x ~kassomat/.xsession
 
 echo "installing openbox configuration"
 sudo -u kassomat mkdir -p ~kassomat/.config/openbox
-sudo -u kassomat ln -svf ${dir}/openbox-rc ~kassomat/.config/openbox/rc.xml
+sudo -u kassomat ln -svf ${dir}/openbox-rc.xml ~kassomat/.config/openbox/rc.xml
 
 for filename in ${executables[@]}
 do
