@@ -1,0 +1,18 @@
+[Unit]
+Description=kassomat payout service
+Requires=redis-server.service
+Requires=dev-serial-by\x2did-usb\x2dInnovative_Technology_LTD_SMART_Hopper\x2dif00.device
+After=redis-server.service dev-serial-by\x2did-usb\x2dInnovative_Technology_LTD_SMART_Hopper\x2dif00.device
+Documentation=http://github.com/sixtyeight/Payout
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sh -c 'sleep 4'
+ExecStart=/home/kassomat/Payout/payoutd -d /dev/serial/by-id/usb-Innovative_Technology_LTD_SMART_Hopper-if00
+User=kassomat
+Group=kassomat
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
