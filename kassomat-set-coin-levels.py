@@ -104,7 +104,17 @@ if __name__ == '__main__':
     for value, count in levels.items():
         print("%d x %d Eurocent" % (value, count))
 
-    levels = change_levels(levels)
-    set_levels(levels)
+    while True:
+        levels = change_levels(levels)
+        set_levels(levels)
         
+        print("""
+        want to change something?
+          - empty line to quit
+          - "yes" or anything else, really, to try again.
+        """)
+        answer = raw_input('> ')
+        if answer == '':
+            break 
+ 
     print("Bye.")
