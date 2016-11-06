@@ -17,6 +17,9 @@
 * `kassomat-set-coin-levels.py`
   enables the user to inform the hardware about new coins.
 
+* `kassomat-count-coins.py`
+  ...emptys hopper, the count unit, and counts everything inside. should be manually invoked.
+
 * `xsession`
   initializes the user session. Hides the mouse pointer, starts changeomatic and
   openbox.
