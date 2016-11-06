@@ -77,7 +77,7 @@ def change_levels(levels):
         else:
             levels[value] = levels[value] + count
     
-        print("new: %d x %d Eurocent" % (value, levels[value]))
+        print("new: %3d Eurocent x %3d" % (value, levels[value]))
     return levels
 
 
@@ -93,16 +93,17 @@ def set_levels(levels):
 	}))
         msg = wait_for_message(correlId)
         status = 'success' if msg['result'] == 'ok' else 'error'
-        print("%d x %d Eurocent: %s" % (value, levels[value], status))
+        print("%3d Eurocent x %3d : %s" % (value, levels[value], status))
 
 
 
 if __name__ == '__main__':
-    levels = get_levels()
     print("Welcome to kassomat maintenance mode!\n")
+    print("Waiting for current coin levels\n")
+    levels = get_levels()
     print("The following coins are in the machine:\n")
     for value, count in levels.items():
-        print("%d x %d Eurocent" % (value, count))
+        print("%3d Eurocent x %3d" % (value, count))
 
     while True:
         levels = change_levels(levels)
